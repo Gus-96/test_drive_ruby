@@ -8,7 +8,7 @@ puts "hello world"
 p "hello world"
 
 =begin
-comenta
-varias 
-linhas
+comenta ...
+varias ... 
+linhas ... 
 =end
