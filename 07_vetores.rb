@@ -1,4 +1,3 @@
-
 # declarar vetor
 lista_de_contatos = []
 
@@ -11,10 +10,12 @@ lista_de_contatos[2] = "1133553435"
 lista_de_contatos.push("11948320172")
 lista_de_contatos.push("11948320172")
 
-
 # add deleta todos indices com o valor entre ("")
 lista_de_contatos.delete("11948320172")
 
-
 puts lista_de_contatos
 
+
+lista_de_contatos.each do |element| 
+    puts element * 2
+end 
