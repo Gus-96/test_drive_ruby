@@ -9,7 +9,17 @@ while i < 11
     puts "#{num} X #{i} = #{num*i}"
     i += 1
 end
-=end
+
+
+(0..5).each do |i|
+   puts "Value of local variable is #{i}"
+end
+
 for i in 1..10
     puts "#{num} X #{i} = #{num*i}"
 end
+=end
+
+(0..10).each do |i|
+    puts "#{num} X #{i} = #{num*i}"
+ end
