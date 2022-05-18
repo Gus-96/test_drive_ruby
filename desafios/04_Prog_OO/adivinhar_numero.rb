@@ -25,8 +25,3 @@ until jogo.venceu do
     numero_informado = gets.chomp.to_i
     puts jogo.tentar_adivinhar(numero_informado)
 end
-
-
-
-
-
