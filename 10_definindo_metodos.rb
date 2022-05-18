@@ -7,7 +7,7 @@ class Pessoa
     end
     def pular_alto
         puts "#{nome} de #{idade} anos está pulando bem alto ... "
-    end     
+    end
 end
 
 p1 = Pessoa.new

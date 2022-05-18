@@ -4,10 +4,10 @@ class Pai
     def falar(texto = "Alô!")
         texto
     end
-end 
+end
 
 class Filha < Pai
-end 
+end
 
 p1 = Pai.new
 p1.nome = "Augusto"
@@ -16,7 +16,7 @@ puts p1.falar
 
 puts "------------------"
 
-f1 = Filha.new 
+f1 = Filha.new
 f1.nome = "Joaquim"
 puts f1.nome
 puts f1.falar("Hello!")

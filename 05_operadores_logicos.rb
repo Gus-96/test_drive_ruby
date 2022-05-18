@@ -17,7 +17,7 @@ if genero == 'feminino' || genero == 'Feminino' || genero == 'FEMININO' || gener
 # Operador and \ &&
 if genero == "Masculino" && idade == 26
     puts "Você provalvemnte é o desenvolvedor desse código"
- else 
+ else
     puts "Olá, prazer em te conhecer!"
  end
 
@@ -25,6 +25,6 @@ if genero == "Masculino" && idade == 26
 # Operador not \ !
  if !(genero == "Masculino" && idade == 26)
     puts "negação está sendo atendida"
- else 
+ else
     puts "negaçao não atendida"
  end

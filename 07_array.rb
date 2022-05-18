@@ -18,6 +18,6 @@ lista_de_contatos.delete("11948320172")
 puts lista_de_contatos
 
 
-lista_de_contatos.each do |element| 
+lista_de_contatos.each do |element|
     puts element * 2
-end 
+end

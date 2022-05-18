@@ -1,5 +1,5 @@
-# O papagaio é inicializado com nome e idade. Os dois podem ser alterados após a inicialização. 
-# O método repetir_frase deve usar um parâmetro com a frase a ser repetida. Caso não seja passado 
+# O papagaio é inicializado com nome e idade. Os dois podem ser alterados após a inicialização.
+# O método repetir_frase deve usar um parâmetro com a frase a ser repetida. Caso não seja passado
 # parâmetro o papagaio deve “dizer” “curupaco!”.
 
 class Papagaio
@@ -11,7 +11,7 @@ class Papagaio
     end
     def repetir_frase(frase = "curupaco")
         frase
-    end 
+    end
 end
 
 papagaio1 = Papagaio.new("Jose", 4)
