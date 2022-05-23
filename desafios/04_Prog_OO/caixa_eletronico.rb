@@ -1,4 +1,4 @@
-# Gem do Validar CPF
+# Gem Validar CPF
 require "check_cpf_cnpj"
 
 #Lista de Cliente
