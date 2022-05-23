@@ -1,4 +1,4 @@
-# Gem Validar CPF
+# Gem do Validar CPF
 require "check_cpf_cnpj"
 
 #Lista de Cliente
@@ -18,13 +18,13 @@ def validar_cliente
         arr = @clientes.select{|i| i[:cpf] == @cpf}
         @hash = Hash[*arr]
 
-    elsif @hash[:cpf] == @cpf && @hash[:senha] == @senha
-        puts "Usuário Autenticado com Sucesso !"
-        puts "Seu saldo é de R$ #{@hash[:saldo]}"
-        puts "\n"
-    else
-        puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
-    end
+        if @hash[:cpf] == @cpf && @hash[:senha] == @senha
+            puts "Usuário Autenticado com Sucesso !"
+            puts "Seu saldo é de R$ #{@hash[:saldo]}"
+            puts "\n"
+        else
+            puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
+        end
     else
         puts "cpf invalido, tente novamente ..."
 
