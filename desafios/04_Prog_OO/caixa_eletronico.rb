@@ -1,24 +1,33 @@
+# Gem do Validar CPF
+require "check_cpf_cnpj"
+
 #Lista de Cliente
 @clientes = []
 
+# Valida CPF e Senha do cliente
 def validar_cliente
     print "Digite o CPF vinculado a conta: "
     @cpf = gets.chomp.to_s
-    print "Digite sua senha: "
-    @senha = gets.chomp.to_s
-    puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
-    puts "\n"
 
+    if CheckCpfCnpj.valid_cpf?(@cpf)
+        print "Digite sua senha: "
+        @senha = gets.chomp.to_s
+        puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
+        puts "\n"
 
-    arr = @clientes.select{|i| i[:cpf] == @cpf}
-    @hash = Hash[*arr]
+        arr = @clientes.select{|i| i[:cpf] == @cpf}
+        @hash = Hash[*arr]
 
-    if @hash[:cpf] == @cpf && @hash[:senha] == @senha
+    elsif @hash[:cpf] == @cpf && @hash[:senha] == @senha
         puts "Usuário Autenticado com Sucesso !"
         puts "Seu saldo é de R$ #{@hash[:saldo]}"
         puts "\n"
     else
         puts "CPF e / ou Senha estão incorretos. Por favor, tente novamente."
+    end
+    else
+        puts "cpf invalido, tente novamente ..."
+
     end
 end
 
@@ -58,11 +67,11 @@ loop do
         # Cria uma nova conta e armazena no array clientes
         conta_corrente = Hash.new
         print "Digite seu nome: "
-        conta_corrente[:nome] = gets.chomp
+        conta_corrente[:nome] = gets.chomp.to_s
         print "Digite seu cpf: "
-        conta_corrente[:cpf] = gets.chomp
+        conta_corrente[:cpf] = CheckCpfCnpj.only_cpf_numbers(gets.chomp.to_s)
         print "Digite a senha: "
-        conta_corrente[:senha] = gets.chomp
+        conta_corrente[:senha] = gets.chomp.to_s
         conta_corrente[:saldo] = 0
         @clientes.push(conta_corrente)
         puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
