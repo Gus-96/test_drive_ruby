@@ -151,13 +151,13 @@ loop do
         puts "\n"
 
     when 7
-        puts validar_cliente
+            puts validar_cliente
 
-        #Exclui Conta
-        @clientes.delete_if { |h| h[:cpf] == @cpf }
+            #Exclui Conta
+            @clientes.delete_if { |h| h[:cpf] == @cpf }
 
-        puts "Conta encerrada com sucesso!"
-        puts "\n"
+            puts "Conta encerrada com sucesso!"
+            puts "\n"
 
     when 8
         #Finaliza a sessão
