@@ -95,8 +95,6 @@ class Cliente
 end
 
 class Admin
-  attr_accessor teste: "Augusto"
-
   # Verificar se existe alguma conta e lista todas
   def listar_contas
 
@@ -165,8 +163,6 @@ loop do
   when 1
       # Listar Todas as Contas
       puts Admin.new.listar_contas
-      a = Admin.new
-      puts a.teste
   when 2
       # Criar Conta Corrente
       puts Admin.novo_cliente
