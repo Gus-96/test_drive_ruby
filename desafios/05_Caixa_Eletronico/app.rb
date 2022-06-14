@@ -95,8 +95,9 @@ class Cliente
 end
 
 class Admin
-  # Verificar se existe alguma conta e lista todas
-  def listar_contas
+
+    # Verificar se existe alguma conta e lista todas
+  def self.listar_contas
 
       puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
       puts "\n"
