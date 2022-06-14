@@ -162,7 +162,7 @@ loop do
   case opcao
   when 1
       # Listar Todas as Contas
-      puts Admin.new.listar_contas
+      puts Admin.listar_contas
   when 2
       # Criar Conta Corrente
       puts Admin.novo_cliente
