@@ -5,8 +5,7 @@ require "check_cpf_cnpj"
 @@clientes = []
 
 class Cliente
-
-  # Valida Cliente
+  # Valida Cliente (cpf e sennha)
   def self.validar_cliente
     print "Digite o CPF vinculado a conta: "
     @cpf = gets.chomp.to_s
@@ -91,14 +90,11 @@ class Cliente
         puts "CPF de destino invalido. Por favor, tente novamente."
     end
   end
-
 end
 
 class Admin
-
-    # Verificar se existe alguma conta e lista todas
+  #Lista todas as contas existentes na base de clientes
   def self.listar_contas
-
       puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
       puts "\n"
 
@@ -112,13 +108,15 @@ class Admin
   # Cria uma nova conta e armazena no array clientes
   def self.novo_cliente
     conta_corrente = Hash.new
+    conta_corrente[:saldo] = 0
+
     print "Digite seu nome: "
     conta_corrente[:nome] = gets.chomp.to_s
     print "Digite seu cpf: "
     conta_corrente[:cpf] = CheckCpfCnpj.only_cpf_numbers(gets.chomp.to_s)
     print "Digite a senha: "
     conta_corrente[:senha] = gets.chomp.to_s
-    conta_corrente[:saldo] = 0
+
     @@clientes.push(conta_corrente)
 
     puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
@@ -131,14 +129,11 @@ class Admin
     print "Digite seu cpf para encerrar a conta: "
     cpf = gets.chomp.to_s
 
-    #Exclui Conta
     @@clientes.delete_if { |h| h[:cpf] == cpf }
 
     puts "Conta encerrada com sucesso!"
   end
-
 end
-
 
 #Menu de Opções
 loop do
@@ -200,5 +195,4 @@ loop do
       puts "\n"
       break
   end
-
 end

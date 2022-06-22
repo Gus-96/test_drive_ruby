@@ -17,7 +17,6 @@ else
     puts "Você é jovem ainda"
 end
 
-
 # Condicional Case
 case years_old
 when 33

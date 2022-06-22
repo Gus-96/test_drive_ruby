@@ -1,7 +1,9 @@
 print "Digite seu nome: "
 nome = gets.chomp
+
 print "Digite seu idade #{nome}: "
 idade = gets.chomp.to_i
+
 print "Digite seu gênero: "
 genero = gets.chomp
 
@@ -10,7 +12,8 @@ if genero == 'feminino' || genero == 'Feminino' || genero == 'FEMININO' || gener
     puts 'O gênero "Feminino" foi registrado com sucesso!'
     genero = "Feminino"
     else
-       puts 'O gênero "Masculino" foi salvo com sucesso!'
+       puts 'O gênero "Masculino" foi saprint "Digite seu nome completo: "
+       lvo com sucesso!'
     genero = "Masculino"
  end
 
@@ -20,7 +23,6 @@ if genero == "Masculino" && idade == 26
  else
     puts "Olá, prazer em te conhecer!"
  end
-
 
 # Operador not \ !
  if !(genero == "Masculino" && idade == 26)
