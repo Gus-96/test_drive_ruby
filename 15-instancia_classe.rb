@@ -1,14 +1,19 @@
-class Teste
-  def ola # Método de Instância
-    "Olá!"
+class Pessoa
+  def initialize(nome_fornecido = 'indigente')
+      @nome = nome_fornecido
   end
 
-  def self.hello # Método de Classe
-    "Hello!"
+  def imprimir_nome
+      @nome
+  end
+
+  def falar
+     'Olá, pessoal!'
   end
 end
 
-#obj = Teste.new
-#puts obj.ola
+p1 = Pessoa.new
+puts p1.imprimir_nome
 
-puts Teste.hello
+p2 = Pessoa.new('augusto')
+puts p2.imprimir_nome
