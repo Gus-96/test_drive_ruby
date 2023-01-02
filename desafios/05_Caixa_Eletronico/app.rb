@@ -113,15 +113,20 @@ class Admin
     print "Digite seu nome: "
     conta_corrente[:nome] = gets.chomp.to_s
     print "Digite seu cpf: "
-    conta_corrente[:cpf] = CheckCpfCnpj.only_cpf_numbers(gets.chomp.to_s)
-    print "Digite a senha: "
-    conta_corrente[:senha] = gets.chomp.to_s
 
-    @@clientes.push(conta_corrente)
+    @cpf = gets.chomp.to_s
 
-    puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
-    puts "\n"
-    puts "Conta criada com sucesso !"
+    if CheckCpfCnpj.valid_cpf?(@cpf)
+        conta_corrente[:cpf] = CheckCpfCnpj.only_cpf_numbers(@cpf)
+        print "Digite a senha: "
+        conta_corrente[:senha] = gets.chomp.to_s
+        @@clientes.push(conta_corrente)
+        puts " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
+        puts "\n"
+        puts "Conta criada com sucesso !"
+    else
+        puts "cpf invalido, tente novamente ..."
+    end
   end
 
   # Exclui Conta
